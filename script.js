@@ -52,7 +52,9 @@ window.onload = function () {
 
     requestAnimationFrame(update);
     setInterval(placePipes, 3000);
+
     document.addEventListener("keydown", moveBird);
+    document.addEventListener("touchstart", moveBird);
 }
 
 function update() {
@@ -147,7 +149,7 @@ function triggerGameOver() {
 }
 
 function moveBird(e) {
-    if (e.type === "touchstart" || e.code == "Space" || e.code == "ArrowUp" || e.code == "KeyX") {
+    if (e.type === "touchstart" || e.code === "Space" || e.code === "ArrowUp" || e.code === "KeyX") {
         velocityY = -6;
 
         if (gameOver) {
