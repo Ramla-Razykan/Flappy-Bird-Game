@@ -55,6 +55,7 @@ window.onload = function () {
 
     document.addEventListener("keydown", moveBird);
     document.addEventListener("touchstart", moveBird);
+    document.addEventListener("click", moveBird);
 }
 
 function update() {
@@ -149,7 +150,7 @@ function triggerGameOver() {
 }
 
 function moveBird(e) {
-    if (e.type === "touchstart" || e.code === "Space" || e.code === "ArrowUp" || e.code === "KeyX") {
+    if (e.type === "click" || e.type === "touchstart" || e.code === "Space" || e.code === "ArrowUp" || e.code === "KeyX") {
         velocityY = -6;
 
         if (gameOver) {
